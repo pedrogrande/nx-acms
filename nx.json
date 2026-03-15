@@ -14,14 +14,12 @@
     ],
     "sharedGlobals": ["{workspaceRoot}/.github/workflows/ci.yml"]
   },
-  "nxCloudId": "69b62ca67558d6f3fbec7a27",
+  "nxCloudId": "69b62dd9583897506a91d660",
   "plugins": [
     {
       "plugin": "@nx/js/typescript",
       "options": {
-        "typecheck": {
-          "targetName": "typecheck"
-        },
+        "typecheck": { "targetName": "typecheck" },
         "build": {
           "targetName": "build",
           "configName": "tsconfig.lib.json",
@@ -30,28 +28,17 @@
         }
       }
     },
-    {
-      "plugin": "@nx/eslint/plugin",
-      "options": {
-        "targetName": "lint"
-      }
-    },
+    { "plugin": "@nx/eslint/plugin", "options": { "targetName": "lint" } },
     {
       "plugin": "@nx/jest/plugin",
-      "options": {
-        "targetName": "test"
-      },
+      "options": { "targetName": "test" },
       "exclude": ["apps/nx-acms-e2e/**/*"]
     },
     {
       "plugin": "@nx/docker",
       "options": {
-        "buildTarget": {
-          "name": "docker:build"
-        },
-        "runTarget": {
-          "name": "docker:run"
-        }
+        "buildTarget": { "name": "docker:build" },
+        "runTarget": { "name": "docker:run" }
       }
     }
   ],
@@ -61,8 +48,6 @@
       "dependsOn": ["^build"],
       "inputs": ["production", "^production"]
     },
-    "test": {
-      "dependsOn": ["^build"]
-    }
+    "test": { "dependsOn": ["^build"] }
   }
 }
